@@ -10,9 +10,20 @@ main_menu = '''\nГлавное меню:
 
 imput_choice = 'Выбирите пункт меню: '
 load_successful = 'Телефонная книга открыта'
+save_successful = 'Телефонная книга успешно сохранена'
 load_error = 'Телефонная книга пуста или не открыта'
 new_contact = 'Данные нового контакта'
 input_contact = {'name': 'Введите имя: ',
                  'phone': 'Введите телефон: ',
                  'adress': 'Введите адрес: '}
+index_del_contact = 'Введите индекс контакта, который хотите удалить'
+new_contact = 'Введите данные нового контакта (пустое поле для отмены)'
+cancel_input = 'Отмена ввода'
 
+
+def new_contact_successful(name: str) -> str:
+    return f'Контакт {name} успешно добавлен'
+
+
+def del_contact(name: str):
+    return f'Контакт успешно удален'

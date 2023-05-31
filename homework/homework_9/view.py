@@ -25,8 +25,20 @@ def print_contact(pb: list[dict[str, str]], err: str):
         print_messege(err)
 
 
-def input_contact(messege: str) -> dict:
+def input_contact(messege: str, cancel: str) -> dict:
     contatc = {}
     for k, v in text.input_contact.items():
-        contatc[k] = input(v)
+        data = input(v)
+        if data:
+            contatc[k] = data
+        else:
+            print_messege(cancel)
+
     return contatc
+
+
+def input_index(messege: str, pb: list, err: str) -> int:
+    while True:
+        index = input(messege)
+        if index.isdigit() and 0 < int(index) < len(pb) + 1:
+            return int(index)
