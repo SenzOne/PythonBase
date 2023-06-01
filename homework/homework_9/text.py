@@ -1,7 +1,7 @@
 main_menu = '''\nГлавное меню:
         1. Открыть файл
         2. Записать файл
-        3. Показать контакт
+        3. Показать всю телефонную книгу
         4. Добавить контакт
         5. Найти контакт
         6. Изменить контакт
@@ -16,8 +16,10 @@ new_contact = 'Данные нового контакта'
 input_contact = {'name': 'Введите имя: ',
                  'phone': 'Введите телефон: ',
                  'adress': 'Введите адрес: '}
-index_del_contact = 'Введите индекс контакта, который хотите удалить'
-new_contact = 'Введите данные нового контакта (пустое поле для отмены)'
+error_del_contact = 'Контакта с таким индексом нет'
+index_del_contact = 'Введите индекс контакта, который хотите удалить: '
+index_change_contact = 'Введите индекс контакта, который хотите изменить: '
+new_contact = 'Введите данные нового контакта (пустое поле для отмены): '
 cancel_input = 'Отмена ввода'
 
 
@@ -26,4 +28,13 @@ def new_contact_successful(name: str) -> str:
 
 
 def del_contact(name: str):
-    return f'Контакт успешно удален'
+    return f'Контакт {name} успешно удален'
+
+
+def chenge_contact_text(data: str):
+    new_data = str(input(f'Изменить "{data}" на -> : '))
+    return new_data
+
+
+def chenge_contact_successful(name: str) -> str:
+    return f'Контакт {name} успешно изменен'

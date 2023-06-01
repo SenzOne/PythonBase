@@ -42,3 +42,12 @@ def input_index(messege: str, pb: list, err: str) -> int:
         index = input(messege)
         if index.isdigit() and 0 < int(index) < len(pb) + 1:
             return int(index)
+        else:
+            print_messege(text.error_del_contact)
+
+
+def chenge_contact(data: dict[str, str]) -> dict:
+    for k, v in data.items():
+        data[k] = text.chenge_contact_text(v)
+    return data
+

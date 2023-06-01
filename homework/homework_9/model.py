@@ -25,6 +25,11 @@ def del_contact(index: int):
     return phone_book.pop(index-1).get('name')
 
 
+def chenge_contact(index: int):
+    data = phone_book.pop(index-1)
+    return data
+
+
 def get_pb() -> list[dict[str, str]]:
     global phone_book
     return phone_book

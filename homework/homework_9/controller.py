@@ -24,12 +24,19 @@ def start():
 
             case 5:
                 pass
-            case 6:
-                pass
+            case 6:  # Изменить контакт
+                pb = model.get_pb()
+                index = view.input_index(text.index_change_contact, pb, text.load_error)
+                data = model.chenge_contact(index)  # data -> {'name': 'Панферова Т.П.', 'phone': '957-04-70 14', ... }
+                new_data = view.chenge_contact(data)
+                name = model.add_contact(new_data)
+                view.print_messege(text.chenge_contact_successful(name))
+
             case 7:
                 pb = model.get_pb()
                 index = view.input_index(text.index_del_contact, pb, text.load_error)
                 name = model.del_contact(index)
                 view.print_messege(text.del_contact(name))
+
             case 8:
                 break
