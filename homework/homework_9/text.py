@@ -21,6 +21,9 @@ index_del_contact = 'Введите индекс контакта, которы�
 index_change_contact = 'Введите индекс контакта, который хотите изменить: '
 new_contact = 'Введите данные нового контакта (пустое поле для отмены): '
 cancel_input = 'Отмена ввода'
+search_name = 'Кого найти?: '
+search_phone = 'Введите номер : '
+search_error = 'Такого контакта нет '
 
 
 def new_contact_successful(name: str) -> str:
@@ -38,3 +41,8 @@ def chenge_contact_text(data: str):
 
 def chenge_contact_successful(name: str) -> str:
     return f'Контакт {name} успешно изменен'
+
+
+def find_contact_successful(data: dict[str, str]):
+    return f'Контакт {data["name"]} {data["phone"]} успешно найден '
+
