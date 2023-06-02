@@ -74,5 +74,5 @@ def del_duplicate(data: list[dict[str, str]], err: str) -> dict:
         if contact['phone'].strip() == phone:
             return contact
         else:
-            print_messege(err)  # print_messege(text.search_error)
+            print_messege(err)
             return del_duplicate(data, err)
