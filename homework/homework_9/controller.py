@@ -25,7 +25,7 @@ def start():
 
             case 5:  # найти контакт
                 pb = model.get_pb()
-                data_contact = view.find_contact(pb)
+                data_contact = view.find_contact(pb, text.search_error)
                 view.print_messege(text.find_contact_successful(data_contact))
 
             case 6:  # Изменить контакт
