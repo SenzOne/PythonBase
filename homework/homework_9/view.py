@@ -53,11 +53,11 @@ def chenge_contact(data: dict[str, str]) -> dict:
 
 
 def find_contact(data: list[dict[str, str]]):
-    name = input(str(text.search_name))
+    name = input(str(text.search_name)).lower()
     data_list = []
-    for i in data:
-        if i['name'] == name:
-            data_list.append(i)
+    for contact in data:
+        if contact['name'][:len(name)].lower() == name:
+            data_list.append(contact)
 
     if len(data_list) == 0:
         return print_messege(text.search_error)
@@ -67,11 +67,12 @@ def find_contact(data: list[dict[str, str]]):
         return del_duplicate(data_list)
 
 
-def del_duplicate(data: list[dict[str, str]], err=None):
+def del_duplicate(data: list[dict[str, str]], err=None) -> dict:
     print_contact(data, err)
     phone = input(str(text.search_phone)).strip()
-    for i in data:
-        if i['phone'].strip() == phone:
-            return i
+    for contact in data:
+        if contact['phone'].strip() == phone:
+            return contact
         else:
-            return print_messege(text.search_error)
+            print(text.search_error)
+            return del_duplicate(data, err=None)

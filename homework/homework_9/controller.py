@@ -24,7 +24,7 @@ def start():
                 view.print_messege(text.new_contact_successful(name))
 
             case 5:  # найти контакт
-                pb = model.get_pb()  # [{'name': 'Панферова Т.П.'
+                pb = model.get_pb()
                 data_contact = view.find_contact(pb)
                 view.print_messege(text.find_contact_successful(data_contact))
 
