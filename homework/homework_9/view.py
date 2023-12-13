@@ -61,7 +61,7 @@ def find_contact(data: list[dict[str, str]], err: str):
 
     if len(data_list) == 0:
         return print_messege(err)
-    elif len(data_list) == 1:
+    if len(data_list) == 1:
         return data_list[0]
     else:
         return del_duplicate(data_list, err)
